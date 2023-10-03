@@ -1,4 +1,5 @@
 require('dotenv').config()
+const { pool } = require('./config/database');
 const http = require('node:http');
 
 const hostname = '127.0.0.1';
@@ -10,6 +11,13 @@ const server = http.createServer((req, res) => {
   res.end('Hello, World!!!!!\n');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, hostname, async (req, res) => {
+  console.log(`Server running at http://${hostname}:${port}/`)
+  
+  const connection = await pool.getConnection()
+  const [mahasiswa] = await connection.query('SELECT * FROM dokter')
+  res.status(200).json({
+    message: "Sukses dalam mengambil data",
+    data: mahasiswa
+  })
 });
