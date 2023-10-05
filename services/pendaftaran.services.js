@@ -1,9 +1,9 @@
 const { pool } = require('../config/database');
 
-const getAllPendafatarn = async () => {
+const getAllPendafataran = async () => {
   const connection = await pool.getConnection()
   try {
-    const [pendaftaran] = await connection.query('SELECT * FROM pendafatran')
+    const [pendaftaran] = await connection.query('SELECT * FROM pendaftaran')
     return pendaftaran
   } catch (error) {
     console.error(error)
