@@ -1,23 +1,19 @@
-require('dotenv').config()
+require('dotenv').config();
+// file entrypoint, dimana nanti server API bakal jalan
+const express = require('express');
 const { pool } = require('./config/database');
-const http = require('node:http');
+const { pendaftaranRoute } = require('./routes/pendaftaran.routes')
 
-const hostname = '127.0.0.1';
-const port = process.env.PORT
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!!!!!\n');
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-server.listen(port, hostname, async (req, res) => {
-  console.log(`Server running at http://${hostname}:${port}/`)
-  
-  const connection = await pool.getConnection()
-  const [mahasiswa] = await connection.query('SELECT * FROM dokter')
-  res.status(200).json({
-    message: "Sukses dalam mengambil data",
-    data: mahasiswa
-  })
-});
+// rute untuk mahasiswa
+// rute untuk campus
+app.use("/pendaftaran", pendaftaranRoute)
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
+})
