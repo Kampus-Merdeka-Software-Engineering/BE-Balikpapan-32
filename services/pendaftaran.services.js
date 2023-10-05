@@ -1,6 +1,6 @@
 const { pool } = require('../config/database');
 
-const getAllPendafataran = async () => {
+const getAllPendaftaran = async () => {
   const connection = await pool.getConnection()
   try {
     const [pendaftaran] = await connection.query('SELECT * FROM pendaftaran')
@@ -14,7 +14,7 @@ const getAllPendafataran = async () => {
 }
 
 
-const createPendafatran = async (pendafatran) => {
+const createPendaftaran = async (pendaftaran) => {
   const connection = await pool.getConnection()
   try {
     // const passwordHashed = await bcrypt.hash(pendaftaran.password, 10)
