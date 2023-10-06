@@ -1,4 +1,4 @@
-const pendaftaranService = require('../services/pendaftaran.service')
+const pendaftaranService = require('../services/pendaftaran.services')
 
 const getAllPendaftaran = async (req, res) => {
   const pendaftaran = await pendaftaranService.getAllPendaftaran()
