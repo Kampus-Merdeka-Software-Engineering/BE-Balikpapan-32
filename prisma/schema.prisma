@@ -30,4 +30,5 @@ model OurTeam {
   nama  String
   prodi String
   Univ  String
+  image String
 }

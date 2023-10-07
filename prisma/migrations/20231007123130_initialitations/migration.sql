@@ -13,7 +13,7 @@ CREATE TABLE `Pendaftaran` (
 CREATE TABLE `Feedback` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `nama` VARCHAR(191) NOT NULL,
-    `pesan` VARCHAR(191) NOT NULL,
+    `pesan` VARCHAR(300) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -25,6 +25,7 @@ CREATE TABLE `OurTeam` (
     `nama` VARCHAR(191) NOT NULL,
     `prodi` VARCHAR(191) NOT NULL,
     `Univ` VARCHAR(191) NOT NULL,
+    `image` VARCHAR(500) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
