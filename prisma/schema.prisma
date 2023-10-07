@@ -32,3 +32,19 @@ model OurTeam {
   Univ  String
   image String
 }
+
+model Artikel {
+  id            Int @id @default(autoincrement())
+  judul         String
+  deskripsi     String
+  image         String
+  link_artikel  String
+}
+
+model Vidio {
+  id            Int @id @default(autoincrement())
+  judul         String
+  deskripsi     String
+  image         String
+  link_vidio  String
+}
