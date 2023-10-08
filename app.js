@@ -47,11 +47,13 @@ app.get('/vidio', async (req, res) => {
     res.status(200).json(vidio)
 })
 
+
 //rute post untuk pendaftaran
+
 app.post('/pendaftaran', async (req, res) => {
-    const { nama, email, jenis_konseling, pilihan_dokter } = req.body;
-    console.log(req.body);
-    const createPendaftaran = await prisma.pendaftaran.create({
+    const { nama, email, jenis_konseling, pilihan_dokter} = req.body;
+    console.log(req, body);
+    const createPendaftaran = await prisma.pendaftaran.create ({
         data: {
             nama,
             email,
@@ -59,11 +61,28 @@ app.post('/pendaftaran', async (req, res) => {
             pilihan_dokter
         }
     })
-    res.status(201).json({
+    res.status(201).json ({
         message : "Pendaftaran Berhasil",
         data : createPendaftaran
     })
 })
+
+// app.post('/pendaftaran', async (req, res) => {
+//     const { nama, email, jenis_konseling, pilihan_dokter } = req.body;
+//     console.log(req.body);
+//     const createPendaftaran = await prisma.pendaftaran.create({
+//         data: {
+//             nama,
+//             email,
+//             jenis_konseling,
+//             pilihan_dokter
+//         }
+//     })
+//     res.status(201).json({
+//         message : "Pendaftaran Berhasil",
+//         // data : createPendaftaran
+//     })
+// })
 
 //rute post untuk feedback
 app.post('/feedback', async (req, res) => {
