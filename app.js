@@ -35,6 +35,18 @@ app.get('/feedback', async (req, res) => {
     res.status(200).json(feedback)
 })
 
+//rute get untuk artikel
+app.get('/artikel', async (req, res) => {
+    const artikel = await prisma.artikel.findMany();
+    res.status(200).json(artikel)
+})
+
+//rute get untuk vidio
+app.get('/vidio', async (req, res) => {
+    const vidio = await prisma.vidio.findMany();
+    res.status(200).json(vidio)
+})
+
 //rute post untuk pendaftaran
 app.post('/pendaftaran', async (req, res) => {
     const { nama, email, jenis_konseling, pilihan_dokter } = req.body;
@@ -68,6 +80,8 @@ app.post('/feedback', async (req, res) => {
         data : createFeedback
     })
 })
+
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
