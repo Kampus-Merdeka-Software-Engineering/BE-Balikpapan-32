@@ -54,7 +54,7 @@ app.post('/pendaftaran', async (req, res) => {
             nama,
             email,
             jenis_konseling,
-            pilihan_dokter
+            pilihan_dokter,
         }
     })
     res.status(201).json ({
