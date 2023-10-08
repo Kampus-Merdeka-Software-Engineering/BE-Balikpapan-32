@@ -13,10 +13,6 @@ app.use(express.json()) //parse request body dari JSON ke Object
 app.use(express.urlencoded({ extended : true })) //parse request body dari x-www-form-urlencoded ke object 
 
 
-// app.get('/', (req, res) => {
-//     res.send('Hello  dfdsfsfdd World');
-// });
-
 //rute get untuk pendaftaran
 app.get('/pendaftaran', async (req, res) => {
     const pendaftaran = await prisma.pendaftaran.findMany();
