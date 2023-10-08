@@ -46,5 +46,5 @@ model Vidio {
   judul         String
   deskripsi     String
   image         String
-  link_vidio  String
+  link_vidio    String
 }
