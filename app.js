@@ -44,7 +44,7 @@ app.get('/vidio', async (req, res) => {
 })
 
 
-//rute post untuk pendaftaran
+//rute untuk post pendaftaran
 
 app.post('/pendaftaran', async (req, res) => {
     const { nama, email, jenis_konseling, pilihan_dokter } = req.body;
