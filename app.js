@@ -67,22 +67,6 @@ app.post('/pendaftaran', async (req, res) => {
     })
 })
 
-// app.post('/pendaftaran', async (req, res) => {
-//     const { nama, email, jenis_konseling, pilihan_dokter } = req.body;
-//     console.log(req.body);
-//     const createPendaftaran = await prisma.pendaftaran.create({
-//         data: {
-//             nama,
-//             email,
-//             jenis_konseling,
-//             pilihan_dokter
-//         }
-//     })
-//     res.status(201).json({
-//         message : "Pendaftaran Berhasil",
-//         // data : createPendaftaran
-//     })
-// })
 
 //rute post untuk feedback
 app.post('/feedback', async (req, res) => {
